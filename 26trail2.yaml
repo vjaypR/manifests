@@ -5,7 +5,7 @@ metadata:
   name: trail-2
 spec:
   containers:
-    - name:
+    - name: alpine
       image: alpine:edge
       args:
         - sleep
