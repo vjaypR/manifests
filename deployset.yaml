@@ -22,11 +22,7 @@ spec:
       spec:
         containers:
           - name: jenkins
-            image: jenkins/jenkins:jdk-11
-            resources:
-              limits:
-                cpu: 2000m
-                memory: 2Gi
+            image: jenkins/jenkins:jdk17
             ports:  
               - containerPort: 8080
 
