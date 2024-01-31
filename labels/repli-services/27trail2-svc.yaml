@@ -34,6 +34,7 @@ metadata:
     app: nginx
 spec:
   ports:
-   - name: svc-port
-     targetPort: 80
-     port: 80
+    - name: svc-port
+      targetPort: 80
+      port: 80
+     
