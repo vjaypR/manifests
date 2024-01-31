@@ -15,6 +15,7 @@ spec:
     metadata:
       labels:
         env: dev
+        app: nginx
         version: v1.0
     spec:
       containers:
