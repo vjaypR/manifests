@@ -12,7 +12,7 @@ spec:
     - name: init2
       image: alpine
       cmd:
-        - exit1
+        - exit 1
     - name: init3
       image: alpine
       args:
