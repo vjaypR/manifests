@@ -12,8 +12,8 @@ spec:
     - name: init2
       image: alpine
       args:
-      - sleep
-      - 10s
+        - sleep
+        - 10s
     - name: init3
       image: alpine
       args:
