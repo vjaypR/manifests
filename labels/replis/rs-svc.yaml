@@ -10,17 +10,17 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: apache
   template:
     metadata:
       labels:
         env: dev
-        app: nginx
+        app: apache
         version: v1.0
     spec:
       containers:
         - name: nginx1
-          image: nginx
+          image: httpd:2.4.58
           ports:
             - containerPort: 80
 
@@ -31,7 +31,7 @@ metadata:
   name: service-1
 spec:
   selector:
-    app: nginx
+    app: apache
   ports:
     - name: svc-1
       targetPort: 80
