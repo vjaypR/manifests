@@ -11,7 +11,7 @@ spec:
         - 10s
     - name: init2
       image: alpine
-      cmd:
+      command:
         - exit 1
     - name: init3
       image: alpine
