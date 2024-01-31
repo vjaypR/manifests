@@ -29,9 +29,9 @@ kind: Service
 metadata:
   name: service-1
 spec:
-  ports:
-    - name: svc1
-      targetPort: 80
-      port: 80
   selector:
     app: nginx
+  ports:
+    - name: svc-1
+      targetPort: 80
+      port: 80
