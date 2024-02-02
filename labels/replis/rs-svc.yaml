@@ -14,8 +14,8 @@ spec:
   template:
     metadata:
       labels:
-        env: dev
         app: apache
+        env: dev
         version: v1.0
     spec:
       containers:
