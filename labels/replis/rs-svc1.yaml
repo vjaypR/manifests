@@ -16,7 +16,7 @@ spec:
       labels:
         app: web-spc
         env: dev
-        version: "1.0.0"
+        version: v3.4.0
     spec:
       containers:
         - name: pushimage
