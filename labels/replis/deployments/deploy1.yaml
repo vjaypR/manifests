@@ -18,10 +18,10 @@ spec:
     metadata:
       labels:
         app: web
-        version: "v1.0"
+        version: "v3.4.0"
     spec:
       containers:
         - name: trail-1
-          image: httpd
+          image: nginx
           ports:
             - containerPort: 80
