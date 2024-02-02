@@ -29,7 +29,8 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata:
-  name: svc-2
+  labels:
+    app: apache-1
 spec:
   type: NodePort
   selector:
