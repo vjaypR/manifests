@@ -23,28 +23,5 @@ spec:
         limits:
           cpu: 1000m
           memory: 2Gi
----
-apiVersion: v1 
-kind: Pod
-metadata:
-  name: check-2
-  labels:
-    app: tommy
-spec:
-  containers:
-    - name: tom
-      image: tomcat:9-jdk17
-      ports:
-        - containerPort: 8080
-      livenessProbe:
-        httpGet:
-          port: 8080
-          path: /
-      readinessProbe:
-        httpGet:
-          port: 8080
-          path: /admin
-      resources:
-        limits:
-          cpu: 1000m
-          memory: 2Gi
+
+      
