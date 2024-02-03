@@ -18,7 +18,8 @@ spec:
       maxUnavailable: 25%
   template:
     metadata:
-      app: try
+      labels:
+        app: try
     spec:
       containers:
         - name: apache
