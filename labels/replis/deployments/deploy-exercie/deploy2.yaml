@@ -38,14 +38,14 @@ spec:
               port: 80
               path: /
         - name: sidecar-1
-          image: tomcat:11.0
+          image: nginx
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           livenessProbe:
             httpGet:
-              port: 8080
+              port: 80
               path: /
           readinessProbe:
             httpGet:
-              port: 8080
+              port: 80
               path: /
