@@ -27,6 +27,16 @@ spec:
           args:
             - sleep
             - 1d
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              port: 80
+              path: /
+          readinessProbe:
+            httpGet:
+              port: 80
+              path: /
         - name: sidecar-1
           image: tomcat:11.0
           ports:
