@@ -1,5 +1,4 @@
----
-apiVersion: v1 
+apiVersion: v1
 kind: Pod
 metadata:
   name: check-1
@@ -19,6 +18,3 @@ spec:
         httpGet:
           port: 8080
           path: /
-     
-
-      
