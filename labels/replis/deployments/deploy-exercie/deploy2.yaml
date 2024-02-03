@@ -10,6 +10,7 @@ spec:
   replicas: 3
   selector: 
     matchLabels:
+    name: class
     app: try
   strategy:
     type: RollingUpdate
