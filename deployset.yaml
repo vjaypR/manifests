@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trail-1
+spec:
+  minReadySeconds: 5
+  replicas: 10
+  selector:
+    matchLabels: 
+      app: jenkins
+  strategy: 
+      type: RollingUpdate
+      rollingUpdate: 
+        maxSurge: 40%
+        maxUnavailable: 40%
+  template:
+      metadata:
+        labels:
+          app: jenkins
+          version: "v1.0"
+      spec:
+        containers:
+          - name: jenkins
+            image: jenkins/jenkins:2.442-alpine-jdk21
+            ports:  
+              - containerPort: 8080
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-service
+spec:
+  selector:
+      app: jenkins
+  type: NodePort
+  ports:
+    - name: jenkins
+      nodePort: 30002
+      port: 8080
+      targetPort: 8080
+
+          

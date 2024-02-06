@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: check-1
+  labels:
+    app: tommy
+spec:
+  containers:
+    - name: tom
+      image: tomcat
+      ports:
+        - containerPort: 8080
+      livenessProbe:
+        httpGet:
+          port: 8080
+          path: /
+      readinessProbe:
+        httpGet:
+          port: 8080
+          path: /

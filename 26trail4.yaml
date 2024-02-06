@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: trail-4
+spec:
+  containers:
+    - name: post
+      image: postgres:16.1
+      env:
+      - name: POSTGRES_PASSWORD
+        value: jaya
+      - name: POSTGRES_USER
+        value: prakash
+      - name: POSTGRES_DB
+        value: emp
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 2Gi
+        
