@@ -10,10 +10,10 @@ spec:
       labels:
         app: dummy-job
     spec: 
+      activeDeadlineSeconds: 30
       selector:
         matchLabels:
           app: dummy-job
-      activeDeadlineSeconds: 30
       template: 
         metadata:
           labels:
