@@ -1,0 +1,25 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: dummy
+spec:
+  schedule: "* * * * *"
+  JobTemplate:
+    metadata:
+      labels:
+        name: dummy-job
+    spec: 
+      selector:
+        matchLabels:
+          name: dummy-job
+      activeDeadlineSeconds: 30
+      template: 
+        metadata:
+          labels:
+            name: dummy-job
+        spec:
+          containers:
+            - name: nginx1
+              image: nginx
+              restartPolicy: Never
