@@ -5,7 +5,7 @@ metadata:
   name: dummy
 spec:
   schedule: "* * * * *"
-  JobTemplate:
+  jobTemplate:
     metadata:
       labels:
         app: dummy-job
