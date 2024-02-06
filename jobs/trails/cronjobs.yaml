@@ -8,18 +8,19 @@ spec:
   JobTemplate:
     metadata:
       labels:
-        name: dummy-job
+        app: dummy-job
     spec: 
       selector:
         matchLabels:
-          name: dummy-job
+          app: dummy-job
       activeDeadlineSeconds: 30
       template: 
         metadata:
           labels:
-            name: dummy-job
+            app: dummy-job
         spec:
+          restartPolicy: Never
           containers:
             - name: nginx1
               image: nginx
-              restartPolicy: Never
+              
