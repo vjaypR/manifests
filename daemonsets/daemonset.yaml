@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: DaemonSet
+spec:
+  minReadySeconds: 5
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        name: trying
+        app: web
+    spec:
+      containers:
+        - name: apache-1
+          image: httpd
+          
