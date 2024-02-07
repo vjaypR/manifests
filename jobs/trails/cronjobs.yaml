@@ -12,9 +12,6 @@ spec:
         app: dummy-job
     spec: 
       activeDeadlineSeconds: 30
-      selector:
-        matchLabels: 
-          app: dummy-job
       template: 
         metadata:
           labels:
