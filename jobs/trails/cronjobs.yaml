@@ -3,6 +3,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: dummy
+  namespace: dev
 spec:
   schedule: "* * * * *"
   jobTemplate:
