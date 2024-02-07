@@ -7,13 +7,13 @@ metadata:
 spec:
   schedule: "* * * * *"
   jobTemplate:
-    metadata:
+    metadata: 
       labels:
         app: dummy-job
     spec: 
       activeDeadlineSeconds: 30
       selector:
-        matchLabels:
+        matchLabels: 
           app: dummy-job
       template: 
         metadata:
@@ -24,4 +24,7 @@ spec:
           containers:
             - name: nginx
               image: nginx
+              args:
+                - sleep
+                - 30s
             
