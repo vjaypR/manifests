@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: DaemonSet
+  name: juju
 spec:
   minReadySeconds: 5
   selector:
@@ -11,10 +11,9 @@ spec:
   template:
     metadata:
       labels:
-        name: trying
         app: web
     spec:
       containers:
         - name: apache-1
           image: httpd
-          
+
