@@ -22,6 +22,6 @@ spec:
         spec:
           restartPolicy: Never
           containers:
-            - name: nginx1
+            - name: nginx
               image: nginx
-              
+            
