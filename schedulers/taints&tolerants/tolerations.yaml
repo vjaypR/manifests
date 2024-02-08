@@ -1,0 +1,17 @@
+---
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: tolertaions
+spec: 
+  tolerations:
+    - key: concept
+      value: taints
+      effect: NoSchedule
+      operator: Equal
+  containers:
+   - name: tolerations
+     image: nginx
+     ports:
+      - containerPort: 80
+      
