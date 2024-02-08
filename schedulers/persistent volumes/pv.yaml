@@ -29,7 +29,7 @@ spec:
           value: jay
       volumeMounts:
         - name: pv 
-          mountPath: var/lib/mysql
+          mountPath: /var/lib/mysql
       
              
 
