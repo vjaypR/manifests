@@ -11,7 +11,7 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchLabels:
-              app: myapp
+              name: basepod
           topologyKey: kubernetes.io/hostname
   containers:
     - name: affinity
