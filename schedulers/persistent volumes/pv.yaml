@@ -16,7 +16,7 @@ spec:
       volumes:
         - name: pv
           persistentVolumeClaim:
-            claimName: check-1
+            claimName: pvc
             readOnly: false
       env:
         - name: MYSQL_ROOT_PASSWORD
