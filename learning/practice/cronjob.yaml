@@ -9,12 +9,8 @@ spec:
     metadata:
       name: dummy
       labels:
-        name: cronjob 
+        name: cj-1
     spec:
-      activeDeadlineSeconds: "30"
-      selector:
-        matchLabels:
-          name: cj-1
       template: 
         metadata:
           labels:
@@ -28,4 +24,5 @@ spec:
               resources:
                 limits:
                   cpu: "500m"
-                  memory: "1000Gi"
+                  memory: "1Gi"
+          restartPolicy: Never
