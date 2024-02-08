@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1 
+kind: DaemonSet
+metadata:
+  name: ds-1
+spec:
+  minReadySeconds: 5
+  selector:
+    matchLabels:
+      app: ds
+  template:
+    metadata:
+      labels:
+        app: ds
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
