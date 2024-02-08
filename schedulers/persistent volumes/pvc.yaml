@@ -9,5 +9,5 @@ spec:
   storageClassName: managed-csi
   resources:
     requests:
-      storage: 4gi
+      storage: "4gi"
   
