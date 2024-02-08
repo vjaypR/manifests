@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: ds
+        version: "v1.0"
     spec:
       containers:
         - name: nginx
