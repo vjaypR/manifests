@@ -13,11 +13,13 @@ spec:
         limits:
           cpu: "1000m"
           memory: "1024Mi"
-      volumes:
-        - name: pv
-          persistentVolumeClaim:
-            claimName: pvc
-            readOnly: false
+      memory: "1024Mi"
+  volumes:
+    - name: pv
+      persistentVolumeClaim:
+        claimName: pvc
+        readOnly: false
+  
       env:
         - name: MYSQL_ROOT_PASSWORD
           value: jay
