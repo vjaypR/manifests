@@ -4,17 +4,17 @@ kind: Pod
 metadata:
   name: anti-affintiy
   labels:
-    app: web
+    name: web
 spec:
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchLabels:
-              app: basepod
+              name: basepod
           topologyKey: kubernetes.io/hostname
   containers:
-    - name: affinity
+    - name: antiaffinity
       image: nginx
       resources:
         limits:

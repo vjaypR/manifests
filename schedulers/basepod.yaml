@@ -4,10 +4,10 @@ kind: Pod
 metadata:
   name: basepod
   labels:
-    name: myapp
+    name: basepod
 spec:
   containers:
-  - name: myapp
+  - name: basepod
     image: nginx
     resources:
       limits:
