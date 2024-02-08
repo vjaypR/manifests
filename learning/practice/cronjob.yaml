@@ -1,0 +1,31 @@
+--- 
+apiVersion: batch/v1
+kind: CronJob 
+metadata:
+  name: check-1
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    metadata:
+      name: dummy
+      labels:
+        name: cronjob 
+    spec:
+      activeDeadlineSeconds: "30"
+      selector:
+        matchLabels:
+          name: cj-1
+      template: 
+        metadata:
+          labels:
+            name: cj-1
+        spec:
+          containers:
+            - name: image
+              image: nginx
+              ports:
+                - containerPort: 80
+              resources:
+                limits:
+                  cpu: "500m"
+                  memory: "1000Gi"
