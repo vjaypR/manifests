@@ -19,7 +19,6 @@ spec:
       persistentVolumeClaim:
         claimName: pvc
         readOnly: false
-  
       env:
         - name: MYSQL_ROOT_PASSWORD
           value: jay
