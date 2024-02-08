@@ -4,14 +4,14 @@ kind: Pod
 metadata:
   name: affintiy
   labels:
-    app: web
+    app: myapp
 spec:
   affinity:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchLabels:
-              app: basepod
+              app: myapp
           topologyKey: kubernetes.io/hostname
   containers:
     - name: affinity
