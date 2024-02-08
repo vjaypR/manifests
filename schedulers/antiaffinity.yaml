@@ -1,0 +1,22 @@
+---
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: anti-affintiy
+  labels:
+    app: web
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: basepod
+          topologyKey: kubernetes.io/hostname
+  containers:
+    - name: affinity
+      image: nginx
+      resources:
+        limits:
+          cpu: "500m"
+          memory: "128Mi"
