@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: check
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-csi
+  resources:
+    storage: 4Gi

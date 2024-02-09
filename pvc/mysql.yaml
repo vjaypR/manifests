@@ -7,7 +7,7 @@ spec:
   volumes:
     - name: std-1
       persistentVolumeClaim:
-        claimName: ReadWriteOnce
+        claimName: std 
         readOnly: false
   containers:
     - name: try
