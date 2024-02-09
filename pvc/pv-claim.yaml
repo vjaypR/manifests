@@ -8,4 +8,5 @@ spec:
     - ReadWriteOnce
   storageClassName: managed-csi
   resources:
-    storage: "4Gi"
+    requests:
+      storage: "4Gi"
