@@ -1,0 +1,23 @@
+---
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: affi-pod
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - name: affinity
+          labelSelector:
+            matchLabels:
+              name: test
+          topologyKey: kubernetes.io/hostname
+  containers:
+    - name: jaya
+      image: httpd
+      ports:
+        - containerPort: 80
+      resources:
+        limits:
+          cpu: "1000m"
+          memory: "1Gi"
