@@ -20,7 +20,7 @@ spec:
         - name: MYSQL_USER
           value: jay
         - name: MYSQL_PASSWORD
-          value: 123
+          value: reddy
       ports:
         - containerPort: 3306
       resources:
