@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: try
+spec:
+  volumes:
+    - name: std-1
+      persistentVolumeClaim:
+        claimName: ReadWriteOnce
+        readOnly: false
+  containers:
+    - name: try
+      image: mysql:8.0-debian
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: jay123
+        - name: MYSQL_DATABASE
+          value: std 
+        - name: MYSQL_USER
+          value: jay
+        - name: MYSQL_PASSWORD
+          value: 123
+      ports:
+        - containerPort: 3306
+      resources:
+        limits:
+          cpu: "128m"
+          memory: "1Gi"
+      volumeMounts:
+        - name: std-1
+          mountPath: /var/lib/mysql
