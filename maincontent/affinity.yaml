@@ -13,7 +13,7 @@ spec:
               name: test
           topologyKey: kubernetes.io/hostname
   containers:
-    - name: jaya
+    - name: affinity
       image: httpd
       ports:
         - containerPort: 80
