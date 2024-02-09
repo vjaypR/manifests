@@ -2,7 +2,7 @@
 apiVersion: v1 
 kind: Pod 
 metadata:
-  name: affi-pod
+  name: anti
 spec:
   affinity:
     podAntiAffinity:
@@ -12,7 +12,7 @@ spec:
               name: test
           topologyKey: kubernetes.io/hostname
   containers:
-    - name: affinity
+    - name: anti
       image: httpd
       ports:
         - containerPort: 80
