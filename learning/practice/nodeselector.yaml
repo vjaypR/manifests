@@ -4,10 +4,10 @@ kind: Pod
 metadata:
   name: node-s
   labels:
-    app: dev
+    env: dev
 spec:
   nodeSelector:
-    app: dev
+    env: dev
   containers:
     - name: nginx
       image: nginx
