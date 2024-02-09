@@ -7,7 +7,7 @@ metadata:
     env: dev
 spec:
   nodeSelector:
-    env: dev
+    env: qa
   containers:
     - name: nginx
       image: nginx
