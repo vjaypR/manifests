@@ -7,8 +7,7 @@ spec:
   affinity:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-        - name: affinity
-          labelSelector:
+        - labelSelector:
             matchLabels:
               name: test
           topologyKey: kubernetes.io/hostname
