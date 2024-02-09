@@ -2,7 +2,7 @@
 apiVersion: V1
 kind: PersistentVolumeClaim
 metadata:
-  name: check
+  name: std-1
 spec:
   accessModes:
     - ReadWriteOnce
