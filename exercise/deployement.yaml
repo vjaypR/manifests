@@ -21,8 +21,8 @@ spec:
         app: web
     spec:
       containers:
-        - name: apache
-          image: httpd
+        - name: jay
+          image: nginx
           livenessProbe:
             httpGet:
               path: /
