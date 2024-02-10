@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: 	Deployment
+metadata:
+  name: test
+spec:
+  minReadySeconds: 5
+  replicas: 4
+  selector:
+    matchLabels:
+      app: web
+  strategy:
+    rollingUpdate:
+    type: RollingUpdate
+    maxSurge: 25%
+    maxUnavailable: 25%
+  template:
+    metadata:
+      name: test
+      labes: 
+        app: web
+    spec:
+      containers:
+        - name: apache
+          image: httpd
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+          readinessProbe:
+             httpGet:
+              path: /
+              port: 80
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /mnt
+              name: class
+      volumes:
+        - emptyDir:
+          name: class
+
