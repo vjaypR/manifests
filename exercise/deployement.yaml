@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: jay
-          image: nginx
+          image: httpd
           livenessProbe:
             httpGet:
               path: /
