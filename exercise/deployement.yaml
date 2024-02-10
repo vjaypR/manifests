@@ -10,10 +10,10 @@ spec:
     matchLabels:
       app: web
   strategy:
-    rollingUpdate:
     type: RollingUpdate
-    maxSurge: 25%
-    maxUnavailable: 25%
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
   template:
     metadata:
       name: test
