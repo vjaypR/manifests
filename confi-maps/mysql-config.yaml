@@ -9,6 +9,10 @@ spec:
       image: mysql:8.0-debian
       ports:
         - containerPort: 3306
+      resources:
+        limits:
+          memory: "1024Mi"
+          cpu: "1000m"
       volumeMounts:
         - name: db-1
           mountPath: /mnt
