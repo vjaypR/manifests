@@ -11,7 +11,7 @@ spec:
         - containerPort: 3306
       resources:
         limits:
-          cpu: "1024Mi"
+          cpu: "2Gi"
           memory: "1000m"
       volumeMounts:
         - name: db-1
