@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap 
+metadata:
+  name: confi
+data:
+  user: jay
+  password: reddy
+  database: emp
+  rootpassword: reddy123

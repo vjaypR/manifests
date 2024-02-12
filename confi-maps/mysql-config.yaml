@@ -1,0 +1,43 @@
+---
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: db 
+spec:
+  containers:
+    - name: sql
+      image: mysql:8.0-debian
+      ports:
+        - containerPort: 3306
+      env:
+        - name: jay
+          valueFrom:
+            configMapKeyRef:
+              key: user
+              name: confi
+        - name: password
+          valueFrom:
+            configMapKeyRef:
+              key: password
+              name: confi
+        - name: database
+          valueFrom:
+            configMapKeyRef:
+              key: database
+              name: confi
+        - name: rootpassword
+          valueFrom:
+            configMapKeyRef:
+              key: rootpassword
+              name: confi
+      resources:
+        limits:
+          cpu: "1000m"
+          memory: "1024Mi"
+      volumeMounts:
+        - name: vol1
+          mountPath: /mnt
+  volumes:
+    - name: vol1
+      configMap: 
+        name: confi
