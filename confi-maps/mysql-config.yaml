@@ -32,7 +32,7 @@ spec:
             configMapKeyRef:
               name: confi 
               key: database
-        - name: rootpassword
+        - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             configMapKeyRef:
               name: confi 
