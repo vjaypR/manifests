@@ -29,11 +29,6 @@ spec:
           valueFrom:
             configMapKeyRef:
               key: rootpassword
-              name: confi
-      resources:
-        limits:
-          cpu: "1000m"
-          memory: "1024Mi"
       volumeMounts:
         - name: vol1
           mountPath: /mnt
