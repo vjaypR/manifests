@@ -1,0 +1,18 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: binding 
+  namespace: dev
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: rolling 
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: jay
+    namespace: dev
+  - apiGroup: "" 
+    kind: ServiceAccount
+    name: SA
