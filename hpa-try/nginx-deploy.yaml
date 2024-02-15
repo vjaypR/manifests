@@ -38,11 +38,12 @@ kind: Service
 metadata:
   name: svc-1
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
       app: test
   ports:
     - name: jay
+      nodePort: 32222
       port: 80
       targetPort: 80
 
