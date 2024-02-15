@@ -43,7 +43,7 @@ spec:
       app: test
   ports:
     - name: jay
-      nodePort: 32222
+      nodePort: 30001
       port: 80
       targetPort: 80
 
