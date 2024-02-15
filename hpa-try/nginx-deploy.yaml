@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx
+          image: nginx:1.24-bullseye
           ports:
             - containerPort: 80
           resources:
