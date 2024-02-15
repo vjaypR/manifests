@@ -8,7 +8,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: test
+      app: test
   strategy:
     type: RollingUpdate
     rollingUpdate: 
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        name: test
+        app: test
     spec:
       containers:
         - name: nginx
@@ -40,7 +40,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-      name: test
+      app: test
   ports:
     - name: jay
       port: 80
