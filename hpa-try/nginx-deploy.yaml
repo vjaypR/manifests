@@ -16,7 +16,8 @@ spec:
       maxUnavailable: 25%
   template:
     metadata:
-      name: test
+      labels:
+        name: test
     spec:
       containers:
         - name: nginx
@@ -39,22 +40,28 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    name: test
+      name: test
   ports:
     - name: jay
       port: 80
       targetPort: 80
 
 ---
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: check
 spec:
   maxReplicas: 10
   minReplicas: 1
-  targetCPUUtilizationPercentage: 50
+  metrics:
+    - type: Resource
+      resource: 
+        name: cpu 
+        target:
+          type: Utilization 
+          averageUtilization: 50
   scaleTargetRef:
-    apiGroup: apps/v1
+    apiVersion: apps/v1
     kind: Deployment 
     name: check
