@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:1.25.4
+          image: nginx
           ports:
             - containerPort: 80
           resources:
@@ -46,22 +46,4 @@ spec:
       port: 80
       targetPort: 80
 
----
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: check
-spec:
-  maxReplicas: 10
-  minReplicas: 1
-  metrics:
-    - type: Resource
-      resource: 
-        name: cpu 
-        target:
-          type: Utilization 
-          averageUtilization: 50
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment 
-    name: check
+
