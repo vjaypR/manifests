@@ -1,0 +1,73 @@
+---
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: redhu
+spec:
+  minReadySeconds: 5
+  replicas: 1
+  selector:
+    matchLabels:
+      name: test
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels: 
+        name: test
+    spec:
+      containers:
+        - name: jay
+          image: nginx:1.25.4
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 250m
+              memory: 256Mi
+        - name: alpine
+          image: alpine
+          args:
+            - sleep
+            - 1d
+          resources:
+            limits:
+              cpu: 250m
+              memory: 256Mi
+
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: auto
+spec:
+  type: ClusterIP
+  selector:
+    name: test
+  ports:
+    - name: check
+      port: 80
+      targetPort: 80
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-try
+spec:
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource: 
+        name: test
+        target: 
+          type: Utilization
+          averageUtilization: 50
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment 
+    name: test
