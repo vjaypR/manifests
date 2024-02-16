@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: red-page
+  labels:
+    app: red 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: red
+  template:
+    metadata:
+      labels:
+        app: red
+    spec:
+      containers:
+      - name: red
+        image: longflew/ingress:REDPAGE
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: red-svc
+spec:
+  selector:
+    app: red
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
