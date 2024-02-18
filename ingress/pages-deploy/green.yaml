@@ -16,10 +16,10 @@ spec:
         app: green
     spec:
       containers:
-      - name: green
-        image: longflew/ingress:GREENPAGE
-        ports:
-        - containerPort: 80
+        - name: green
+          image: longflew/ingress:GREENPAGE
+          ports:
+            - containerPort: 80
 
 ---
 apiVersion: v1

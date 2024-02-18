@@ -16,10 +16,10 @@ spec:
         app: yellow
     spec:
       containers:
-      - name: yellow
-        image: longflew/ingress:YELLOWPAGE
-        ports:
-        - containerPort: 80
+        - name: yellow
+          image: longflew/ingress:YELLOWPAGE
+          ports:
+            - containerPort: 80
 
 ---
 apiVersion: v1

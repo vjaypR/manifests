@@ -16,10 +16,10 @@ spec:
         app: blue
     spec:
       containers:
-      - name: blue
-        image: longflew/ingress:BLUEPAGE
-        ports:
-        - containerPort: 80
+        - name: blue
+          image: longflew/ingress:BLUEPAGE
+          ports:
+            - containerPort: 80
 
 ---
 apiVersion: v1
