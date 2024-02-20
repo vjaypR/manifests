@@ -1,41 +1,26 @@
 ---
 apiVersion: networking.k8s.io/v1
-kind: Ingress
+kind: Ingress 
 metadata:
-  name: path-based
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: trail
 spec:
   ingressClassName: webapprouting.kubernetes.azure.com
   rules:
     - http:
         paths:
-          - path: /blue(/|$)(.*)
-            pathType: ImplementationSpecific
+          - path: /nginx
+            pathType: Prefix
             backend:
-              service: 
-                name: blue-svc
+              service:
+                name: check1-svc
                 port: 
                   number: 80
-          - path: /green(/|$)(.*)
-            pathType: ImplementationSpecific
+          - path: /apache
+            pathType: Prefix
             backend:
-              service: 
-                name: green-svc
+              service:
+                name: check2-svc
                 port: 
                   number: 80
-          - path: /yellow(/|$)(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service: 
-                name: yellow-svc
-                port: 
-                  number: 80
-          - path: /red(/|$)(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service: 
-                name: red-svc
-                port: 
-                  number: 80
+              
+              

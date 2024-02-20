@@ -2,22 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green-page
-  labels:
-    app: green 
+  name: test2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: green
+      app: check-2
   template:
     metadata:
       labels:
-        app: green
+        app: check-2
     spec:
       containers:
-        - name: green
-          image: longflew/ingress:GREENPAGE
+        - name: check-2
+          image: httpd
           ports:
             - containerPort: 80
 
@@ -25,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: green-svc
+  name: check2-svc
 spec:
   selector:
-    app: green
+    app: check-2
   ports:
     - protocol: TCP
       port: 80
