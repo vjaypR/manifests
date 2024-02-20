@@ -3,20 +3,24 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress 
 metadata:
   name: trail
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+
 spec:
   ingressClassName: webapprouting.kubernetes.azure.com
   rules:
     - http:
         paths:
-          - path: /nginx
-            pathType: Prefix
+          - path: /nginx(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: check1-svc
                 port: 
                   number: 80
-          - path: /apache
-            pathType: Prefix
+          - path: /apache(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: check2-svc
